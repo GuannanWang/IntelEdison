@@ -1,0 +1,23 @@
+Start guide for UVa wifi connection (Wahoo) for Intel Edison board
+
+First, start from putty, which you can download from http://www.putty.org/. 
+After Installing it, in the following interface, firstly select connection type: “Serial”, 
+and then put in Serial port: COM10, (at least for this board) and speed: 115200, and hit “Open”.
+
+Then another interface shows up, and type “root”, and maybe your password, here my password is “EdisonEdison”.
+Then you are allowed to go into the serial communication session, 
+and type the command “configure_edison --wifi”, hit “Enter”.
+
+And then you would see the list of the available network SSID options, 
+what you need to do next is to enter the number corresponding to one of the listed network SSIDs, 
+and maybe type in the password for encrypted network, then the connection is initiated. 
+After you see “Done”, the connection is established. 
+
+As is instructed, you can open the browser, and go to the link showed above or what you see in your own IDE. 
+If the following message shows up, this means the connectivity is totally done. 
+
+If the browser hangs, use the following command:
+ifconfig usb0 down
+ifconfig wlan0 down
+ifconfig usb0 up
+ifconfig wlan0 up
